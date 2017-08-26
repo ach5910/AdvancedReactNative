@@ -1,0 +1,21 @@
+ANIMATION
+1. Where is the item right now?
+    Animated.ValueXY
+2. Where is the element moving to?
+    Animated.Spring
+3. Which element are we moving?
+    Animated.View
+
+
+COMPONTS
+Flow
+Get Initial State -> Render Component -> Update State -> Component Rerenders
+
+PANRESPONDER - GESTURE SYSTEM
+Handles Gesture Input
+1. What are we touching?
+2. What component handles touch?
+3. How is the gesture changing?
+
+INTERPOLATION
+ties properties together ex) dx and rotations or dy and color
