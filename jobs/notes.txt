@@ -14,3 +14,6 @@ Navigator Types
 Stack: You want a header. Good when you want to go 'forward' and 'back'
 Tab: You want a bottm bar (optional). Good when you want to show Eithr view A or B 
 Drawer: You want a side bar. Good when you want Either view A or view B
+
+4201738803816157
+4201738803816157
