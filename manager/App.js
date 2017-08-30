@@ -3,9 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
+import LoginForm from './components/LoginForm'
 import ReduxThunk from 'redux-thunk';
-import LoginForm from './components/LoginForm';
 import reducers from './reducers';
+import Router from './Router';
+
 
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
@@ -26,7 +28,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
@@ -34,9 +36,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 });

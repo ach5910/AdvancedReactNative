@@ -1,52 +1,25 @@
 import React, { Component } from 'react';
-import { 
-    View, 
-    Text, 
-    TouchableWithoutFeedback,  
-    ListView, 
-    LayoutAnimation,
-    Platform,
-    UIManager
-} from 'react-native';
-import { connect } from 'react-redux';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-import { Card, CardSection } from './common';
-import * as actions from '../actions';
+
+import { CardSection } from './common';
 
 class ListItem extends Component{
-
-    componentWillUpdate(){
-        if (Platform.OS === 'android') {
-            UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
-        }
-        console.log('in Component')
-        LayoutAnimation.spring();
-    }
-
-    renderDescription() {
-
-        const { library, expanded } = this.props;
-
-        if (expanded){
-            return (
-                <CardSection>
-                    <Text style={{ flex: 1 }}>  {library.description}  </Text>
-                </CardSection>
-            )
-        }
+    onRowPress() {
+        Actions.employeeEdit({  employee: this.props.employee });
     }
 
     render(){
-        const { id, title } = this.props.library;
+        const { name } = this.props.employee;
         return (
-            <TouchableWithoutFeedback
-                onPress={() => this.props.selectLibrary(id)}
-            >
+            <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
                 <View>
                     <CardSection>
-                        <Text style={styles.titleStyle}>  {title}  </Text>
+                        <Text style={styles.titleStyle}>
+                            {name}
+                        </Text>
                     </CardSection>
-                    {this.renderDescription()}
                 </View>
             </TouchableWithoutFeedback>
         )
@@ -55,15 +28,13 @@ class ListItem extends Component{
 
 const styles = {
     titleStyle: {
+        flex: 1,
         fontSize: 18,
         paddingLeft: 15
     }
 }
 
-// Passes in Application State, and props passed in from parent component
-const mapStateToProps = (state, ownProps) => {
-    const expanded = state.selectedLibraryId === ownProps.library.id;
-    return { expanded }
-}
 
-export default connect(mapStateToProps, actions)(ListItem);
+
+
+export default ListItem;
