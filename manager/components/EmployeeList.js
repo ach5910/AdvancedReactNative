@@ -48,6 +48,9 @@ const mapStateToProps = state => {
     const employees = _.map(state.employees, (val, uid) => {
         return { ...val, uid}
     });
+    console.log('Before mp')
+    console.log(employees)
+    console.log('After map')
     return { employees };
 }
 export default connect(mapStateToProps, {employeesFetch})(EmployeeList);

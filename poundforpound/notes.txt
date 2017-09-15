@@ -1,0 +1,52 @@
+user : {
+    login :{
+    name: 'name'
+    uid: 'uid'
+    }
+
+}
+
+workout :{
+    time
+    user
+    routine {
+        name: 'name'
+        exercises: {
+
+        }
+
+    }
+}
+
+exercises {
+    name
+    date
+    user
+    number of sets 
+    sets : {
+        wt
+        reps
+    }
+}
+
+
+    "axios": "0.15.3",
+    "expo": "^20.0.0",
+    "firebase": "^3.4.1",
+    "latlng-to-zip": "0.0.1",
+    "lodash": "4.17.4",
+    "native-base": "^2.0.0",
+    "qs": "6.4.0",
+    "react": "^16.0.0-alpha.12",
+    "react-native": "https://github.com/exponent/react-native/archive/sdk-20.0.0.tar.gz",
+    "react-native-calendars": "^1.6.1",
+    "react-native-elements": "0.10.2",
+    "react-native-pathjs-charts": "0.0.31",
+    "react-native-router-flux": "^3.37.0",
+    "react-native-svg": "^4.4.0",
+    "react-navigation": "^1.0.0-beta.7",
+    "react-redux": "5.0.3",
+    "redux": "3.6.0",
+    "redux-persist": "4.6.0",
+    "redux-thunk": "2.2.0",
+    "victory-native": "^0.15.0"

@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const SWIPE_THRESHOLD = 0.40 * SCREEN_WIDTH;
-const SWIPE_OUT_DURATION = 250;
+const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
+const SWIPE_OUT_DURATION = 350;
 
 class Swipe extends Component {
   static defaultProps = {
@@ -80,8 +80,8 @@ class Swipe extends Component {
   getCardStyle() {
     const { position } = this.state;
     const rotate = position.x.interpolate({
-      inputRange: [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
-      outputRange: ['-120deg', '0deg', '120deg']
+      inputRange: [-SCREEN_WIDTH * 1.75, 0, SCREEN_WIDTH * 1.75],
+      outputRange: ['-75deg', '0deg', '75deg']
     });
 
     return {
